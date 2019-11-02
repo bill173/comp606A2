@@ -1,6 +1,7 @@
 <?php
 include("class/Job1.php");
 include("class/message_ok.php");
+include("class/customer.php");
 
 
 $obj = new Job1("safetrade");
