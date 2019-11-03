@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- 主机： 127.0.0.1
--- 生成日期： 2019-11-01 09:35:27
--- 服务器版本： 10.3.16-MariaDB
--- PHP 版本： 7.3.7
+-- Host: 127.0.0.1
+-- Generation Time: Nov 03, 2019 at 11:52 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `safetrade`
+-- Database: `safetrade`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
@@ -41,7 +41,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id`, `username`, `mobile`, `jobname`, `location`, `description`, `cost`, `dop`, `dov`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `customer` (`id`, `username`, `mobile`, `jobname`, `location`, `desc
 -- --------------------------------------------------------
 
 --
--- 表的结构 `tradesmen`
+-- Table structure for table `tradesmen`
 --
 
 CREATE TABLE `tradesmen` (
@@ -77,7 +77,7 @@ CREATE TABLE `tradesmen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `tradesmen`
+-- Dumping data for table `tradesmen`
 --
 
 INSERT INTO `tradesmen` (`tid`, `tname`, `sex`, `age`, `mobile`, `wid`, `totalcost`, `laborcost`, `materialcost`, `tvaliddate`, `status`) VALUES
@@ -93,7 +93,7 @@ INSERT INTO `tradesmen` (`tid`, `tname`, `sex`, `age`, `mobile`, `wid`, `totalco
 -- --------------------------------------------------------
 
 --
--- 表的结构 `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -105,7 +105,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- 转存表中的数据 `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `mobile`) VALUES
@@ -118,45 +118,45 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `mobile`) VALUES
 (7, 'bill', '123', '123', 123);
 
 --
--- 转储表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 表的索引 `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `tradesmen`
+-- Indexes for table `tradesmen`
 --
 ALTER TABLE `tradesmen`
   ADD PRIMARY KEY (`tid`);
 
 --
--- 表的索引 `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- 在导出的表使用AUTO_INCREMENT
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- 使用表AUTO_INCREMENT `customer`
+-- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- 使用表AUTO_INCREMENT `tradesmen`
+-- AUTO_INCREMENT for table `tradesmen`
 --
 ALTER TABLE `tradesmen`
   MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- 使用表AUTO_INCREMENT `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
