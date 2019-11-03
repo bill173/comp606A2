@@ -1,0 +1,153 @@
+*{
+    margin:0;
+    padding:0;
+}
+.div_tb1{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:700px;
+}
+.div2{
+    display:flex;
+    justify-content:center;
+   
+    height:310px;
+}
+
+li{
+    list-style:none;
+    float:right;
+    width:200px;
+    height:30px;
+    margin-top:35px;
+    text-align: center;
+   background:rgb(218, 211, 199);
+   margin-left:2px;
+    cursor:pointer;
+    line-height:30px;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px black;
+}
+li:hover{
+    background: silver;
+    
+}
+ul{
+    margin-right:350px;
+}
+
+nav{
+    background-color:grey;
+    width:1450px;
+    height:100px;
+    margin:0 auto;
+}
+.msg{
+    width:200px;
+    height:70px;
+    padding-left:200px;
+    float:left;
+}
+a{
+    text-decoration: none;
+    color:grey;
+}
+.indexD1{
+   
+    background:url('m.jpg') no-repeat center/cover;
+    width:1000px;
+    height:600px;
+    border-radius: 3px;
+   
+}
+
+.indexD2{
+    
+    
+    
+    width:700px;
+    height:300px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top:30px;
+    
+}
+
+.fd {
+    background-color:rgb(158, 155, 155); 
+    width:500px;
+    height:600px;
+    border-radius: 3px;
+}
+.bd {
+    background-color:white; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:630px;
+}
+
+.content{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    height:500px;
+    
+    text-indent:1.3em;
+}
+.button{
+    
+    margin-top:30px;
+    width:220px;
+    height:50px;
+    color:white;
+   
+   background:orange;
+   
+    cursor:pointer;
+    
+    border-radius: 6px;
+   
+    font-size:40px;
+}
+.cd{
+    background-color:rgb(158, 155, 155); 
+    width:500px;
+    height:600px;
+    border-radius: 3px;
+    text-align: center;
+}
+.policy{
+    font-size: 25px;
+    color:orange;
+    text-align: center;
+    margin-top:30px;
+    margin-left:20px;
+    margin-right:20px;
+}
+.content1{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    height:200px;
+    
+    text-indent:1.3em;
+}
+
+.tb1{
+    border:1px solid;
+    text-align: center;
+    width:600px;
+    
+ }
+ .tb1 td{
+     border-left:1px solid;
+     border-bottom:1px solid;
+  }
+  .tb1 th{
+     border-left:1px solid;
+     border-bottom:1px solid;
+  }

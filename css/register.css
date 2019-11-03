@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    height:100%;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:grey;
+}
+.register{
+    width:300px;
+    height:400px;
+    background:lightgrey;
+
+}
+
+.title{
+    color:#FFFFFF;
+    text-align:center;
+    font-size:2em;
+}
+.content{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.post{
+    width:300px;
+    height:600px;
+    background:lightgrey;
+
+}
