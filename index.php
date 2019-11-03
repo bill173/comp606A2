@@ -17,7 +17,7 @@ header("content-type:text/html;charset=utf-8");
    
     <link rel="stylesheet" href="css/hearder.css" />
     
-    <title>freeTrade</title>
+    <title>FreeTrade</title>
 
    
 
@@ -46,17 +46,9 @@ include("header.php");
 </div>
 <div   style="background-color:white" class="div2">
     <div class="indexD2">
-     <h2>Now that you are here, stop for a second.<br>
-Drop your shoulders.<br>
-Relax your jaw.<br>
-Take a deep breath.<br>
-Exhale, slowly.
- 
-That is better.
-</h2>
+     <h2>Job hunting. Learn how to find work</h2>
 ​
-<p style="font-size:13px;">With just this small moment of pause and attention, your body experienced a shift.
-Imagine what could be achieved if you committed to regular self-care?</p>
+<p style="font-size:13px;">With FreeTrade, you can search millions of jobs online to find the next step in your career.</p>
     </div>   
 </div>
 
