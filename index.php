@@ -1,13 +1,7 @@
 
 <?php
 header("content-type:text/html;charset=utf-8");
-//include("includes/init.php");
-//
-//$cid=!empty($_GET['cid'])?$_GET['cid']:"";
-//
-//$cname=$cid==""?"":"-".$obj->get_classname("class","id=$cid","classname");
-//
-//$rt=$obj->get_classname("config","id=1","webname");
+
 ?>
 <html>
 

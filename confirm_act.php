@@ -13,7 +13,7 @@ $status = isset($_GET["status"])?$_GET["status"]:"";
 //use confirm method of Tradesmen class
 $confirm = Tradesmen::confirm($mysqli, $tname,$id,"","","","","","","",$status);
 
-
+ //judge if is successfully
 if($confirm){
     msg_url("confirmed successfully","confirm.php?id=$id");
 }else{

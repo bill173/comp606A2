@@ -6,13 +6,14 @@ include("class/message_ok.php");
 require_once("header1.php");
 
 session_start();
+//judge if there is value in session
 if(empty($_SESSION['username'])){
     msg_url("Login Please!","login.php");
 }
 
-
+//get id value
 $id=isset($_GET["id"])?$_GET["id"]:"";
-
+//use tradesman class
 $tradesmen = Tradesmen::getApplyedDetail($mysqli, $id);
 
 
@@ -81,6 +82,7 @@ $tradesmen = Tradesmen::getApplyedDetail($mysqli, $id);
               <td><?php   echo $v['materialcost'] ?></td>
               <td><?php  echo $v['tvaliddate'] ?></td>
               <td><?php   echo $v['mobile'] ?></td>
+              <?php //judge confirmation status,if confirmed,will be marked with red color  ?>
               <td><?php if($v['status']==1){echo "<p style='color:red'> confirmed </p>";}else{ echo "<p style='color:grey'>pendding</p>";} ?></td>
          <td><?php if($v['status']==0){ ?>  <a href="confirm_act.php?status=1&tname=<?php echo $v['tname'] ?>&id=<?php echo $id ?>">confirm </a><?php }else{ ?>
                 <a>confirmed </a>

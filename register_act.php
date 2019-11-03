@@ -5,18 +5,15 @@ include("lib/dbconnect.php");
 
 
 
-
+//get value from form
 $username=isset($_POST['username'])?$_POST['username']:"";
 
-//echo $username;
-//exit;
 $password=isset($_POST['password'])?$_POST['password']:"";
-//$password=sha1($password);
+
 
 
 $re_password=isset($_POST['re_password'])?$_POST['re_password']:"";
-//encode password 
-//$re_password=sha1($re_password);
+
 $email=isset($_POST['email'])?$_POST['email']:"";
 $mobile=isset($_POST['mobile'])?$_POST['mobile']:"";
 
@@ -24,7 +21,7 @@ $mobile=isset($_POST['mobile'])?$_POST['mobile']:"";
 
 
 
-
+//use find1 method of user class
 $row = user::find1($mysqli, $username);
 
 

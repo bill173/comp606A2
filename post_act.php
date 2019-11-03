@@ -4,7 +4,7 @@ include("class/Customer.php");
 include("class/message_ok.php");
 
 
-//$obj = new Job1("safetrade");
+//get value from form 
 
 $username=isset($_POST['username'])?$_POST['username']:"";
 
@@ -26,28 +26,13 @@ $dop=date("Y-m-d,H:i:s",time());
 $mobile=isset($_POST['mobile'])?$_POST['mobile']:"";
 
 
-
+//use create method of customer class
 $job=Customer::create($mysqli, $jobname,  $location,$description,$cost,$dop, $dov,$username,$mobile);
 
 
 
 
-   // $data=array
-   // (
-    //    'username'=>$username,
-        
-    //    'jobname'=>$jobname,
-    //    'location'=>$location,
-   //     'mobile'=>$mobile,
-    //    'description'=>$description,
-        
-    //    'cost'=>$cost,
-    //    'dov'=>$dov,
-     //   'dop'=>$dop,
-
-    //)
-   // ;
-    //$row = $obj->insertdata("customer",$data);
+  
   
     if($job){
         msg_url("Posted successfully","showJobList.php");

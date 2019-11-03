@@ -13,10 +13,8 @@ if(empty($_SESSION['username'])){
 $username = $_SESSION['username'];
 
 
-//$obj=new Job1("safetrade");
 
-//$row=$obj->get_all("customer","username='$username'");
-
+//use getPostedJob method of customer class
 
 $job = Customer::getPostedJob($mysqli,$username);
 

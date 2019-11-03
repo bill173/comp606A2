@@ -1,6 +1,9 @@
 <?php
+//session start
 session_start();
+//get value from session
 $username = $_SESSION['username'];
+//get id value
 $id=isset($_GET['id'])?$_GET['id']:"";
 
 

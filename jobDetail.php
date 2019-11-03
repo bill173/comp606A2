@@ -10,11 +10,11 @@ if(empty($_SESSION['username'])){
     msg_url("Login Please!","login.php");
 }
 
-
+//get id value
 $id=isset($_GET["id"])?$_GET["id"]:"";
 
 
-
+//use customer class find method
 $job = Customer::find($mysqli, $id);
 
 

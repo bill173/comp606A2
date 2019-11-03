@@ -32,7 +32,7 @@ $tradesmen=Tradesmen::create($mysqli, $tname,  $wid,$sex,$age,$totalcost, $labor
 
 
 
-    
+    //judge if is successfully
    
     
     if($tradesmen){

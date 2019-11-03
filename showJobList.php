@@ -10,7 +10,7 @@ if(empty($_SESSION['username'])){
     msg_url("Login Please!","login.php");
 }
 
-
+//use getALL method of customer class
 $job = Customer::getALL($mysqli);
 
 
