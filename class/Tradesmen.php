@@ -36,8 +36,6 @@ class Tradesmen{
     // create a job object and return it otherwise return false;
     $result = false;
     $sql = sprintf("insert into tradesmen(tname, wid,sex,age,totalcost, laborcost,materialcost,tvaliddate,mobile) values( '%s', '%s', '%s','%s', '%s', '%s', '%s','%s','%s')", $tname,  $wid,$sex,$age,$totalcost, $laborcost,$materialcost,$tvaliddate,$mobile);
-   echo  $sql;
-   exit;
     $qresult = $mysqli->query($sql);
     if ($qresult){
       $tid = "";
