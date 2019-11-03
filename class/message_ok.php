@@ -17,9 +17,7 @@
 			<td width="404" align="center" class="warning" id="notice_message">&nbsp;</td>
 			<!--<td id="notice_message" class="warning"><span style='font-size:18px;color:#9C0D3F;font-weight:bod;'><?=$Msg?></span></td>-->
 		</tr>
-		<tr>
-		<td align="center" class="warning" id="notice_message"><img   src="../includes/Ok.jpg"/></td>
-		</tr>
+	
 		<tr>
 		  <td align="center" class="warning" id="notice_message"><span style='font-size:18px;color:#9C0D3F;font-weight:bod;'>
           <?=$Msg?>
