@@ -1,5 +1,8 @@
 <?php  
 require "lib/autoloader.php";
+require "lib/dbconnect.php";
+
+//header of pages
 ?>
 
 
@@ -15,7 +18,7 @@ require "lib/autoloader.php";
     
     
         <ul class="word clearfix">
-        <li><a href="myEstimatedJob.php">MY ESTIMATED JOB</a></li>
+        <li><a href="myEstimatedJob.php">MY APPLYED JOB</a></li>
            
             <li><a href="myPostedJob.php?cid=2">MY POSTED JOB</a></li>
             <li><a href="post.php?cid=1">POST A JOB</a></li>

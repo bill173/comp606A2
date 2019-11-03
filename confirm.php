@@ -13,10 +13,7 @@ if(empty($_SESSION['username'])){
 
 $id=isset($_GET["id"])?$_GET["id"]:"";
 
-$obj=new Job1("safetrade");
-$row=$obj->get_all("tradesmen","tid = '$id'");
-
-
+$tradesmen = Tradesmen::getApplyedDetail($mysqli, $id);
 
 
 
@@ -37,7 +34,13 @@ $row=$obj->get_all("tradesmen","tid = '$id'");
     
     <title>freeTrade</title>
 
-   
+    <style>
+   .abc{
+       font-size:30px;
+       height:600px;
+       line-height:500px;
+   }
+   </style>
 
 </head>
 
@@ -47,7 +50,9 @@ $row=$obj->get_all("tradesmen","tid = '$id'");
 
 
 
-
+<?php if(empty($tradesmen)){ echo "<p class='abc'> No applyed information </p>";} 
+    
+    else{?>
 
 <div class="div_tb1">
          <table class="tb1" cellspacing=0px; cellpadding=0px;>
@@ -60,11 +65,11 @@ $row=$obj->get_all("tradesmen","tid = '$id'");
                 <th>material cost</th>
                 <th>dov</th>
                 <th>mobile</th>
-                <th></th>
+                <th>status</th>
                 <th></th>
                
             </tr>
-         <?php   foreach($row as $v){  ?>
+         <?php   foreach($tradesmen as $v){  ?>
 
          
             <tr>
@@ -76,8 +81,10 @@ $row=$obj->get_all("tradesmen","tid = '$id'");
               <td><?php   echo $v['materialcost'] ?></td>
               <td><?php  echo $v['tvaliddate'] ?></td>
               <td><?php   echo $v['mobile'] ?></td>
-              <td>cancel</td>
-              <td><a href="jobDetail.php">comfirm</a></td>
+              <td><?php if($v['status']==1){echo "<p style='color:red'> confirmed </p>";}else{ echo "<p style='color:grey'>pendding</p>";} ?></td>
+         <td><?php if($v['status']==0){ ?>  <a href="confirm_act.php?status=1&tname=<?php echo $v['tname'] ?>&id=<?php echo $id ?>">confirm </a><?php }else{ ?>
+                <a>confirmed </a>
+               <?php } ?></td>
             
 
            
@@ -87,7 +94,7 @@ $row=$obj->get_all("tradesmen","tid = '$id'");
      </div>
         
 
-
+         <?php }?>
 
  
 

@@ -13,12 +13,12 @@ if(empty($_SESSION['username'])){
 $username = $_SESSION['username'];
 
 
-$obj=new Job1("safetrade");
+//$obj=new Job1("safetrade");
 
-$row=$obj->get_all("customer","username='$username'");
+//$row=$obj->get_all("customer","username='$username'");
 
 
-
+$job = Customer::getPostedJob($mysqli,$username);
 
 
 
@@ -40,7 +40,13 @@ $row=$obj->get_all("customer","username='$username'");
     <title>freeTrade</title>
 
    
-
+    <style>
+    .abc{
+       font-size:30px;
+       height:600px;
+       line-height:500px;
+   }
+   </style>
 </head>
 
 <body>
@@ -48,7 +54,12 @@ $row=$obj->get_all("customer","username='$username'");
 
 
 
+<?php if(empty($job)){
 
+echo "<p class='abc'> You have not posted any job </p>";
+}else{  
+    
+    ?>
 
 
 <div class="div_tb1">
@@ -64,10 +75,10 @@ $row=$obj->get_all("customer","username='$username'");
                 <th>Name</th>
                 <th>Mobile</th>
                 <th>status</th>
-                <th></th>
+                
                
             </tr>
-            <?php foreach($row as $v){ ?>
+            <?php foreach($job as $v){ ?>
             <tr>
               <td><?php  echo $v['id'] ?></td>
               <td><?php   echo $v['jobname'] ?></td>
@@ -79,7 +90,7 @@ $row=$obj->get_all("customer","username='$username'");
               <td><?php   echo $v['username'] ?></td>
               <td><?php   echo $v['mobile'] ?></td>
               <th><a href="confirm.php?id=<?php echo $v['id'] ?>">view</a></th>
-              <td><a href="jobDetail.php?id=<?php echo $v['id'] ?>">delete</a></td>
+              
             
 
            
@@ -90,7 +101,7 @@ $row=$obj->get_all("customer","username='$username'");
         
 
 
-
+            <?php } ?>
  
 
 

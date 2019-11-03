@@ -11,10 +11,9 @@ if(empty($_SESSION['username'])){
 }
 
 
+$job = Customer::getALL($mysqli);
 
 
-$obj=new Job1("safetrade");
-$row=$obj->get_all("customer");
 
 
 
@@ -54,29 +53,18 @@ $row=$obj->get_all("customer");
             <tr>
                 <th>ID</th>
                 <th>Jobname</th>
-                <th>Location</th>
-                <th>description</th>
-                <th>Cost</th>
-                <th>PublicTime</th>
-                <th>ValidationTime</th>
-                <th>Name</th>
-                <th>Mobile</th>
+              
                 <th></th>
                
+               
             </tr>
-            <?php foreach($row as $v){ ?>
+            <?php foreach($job as $v){ ?>
             <tr>
               <td><?php  echo $v['id'] ?></td>
               <td><?php   echo $v['jobname'] ?></td>
-              <td><?php  echo $v['location'] ?></td>
-              <td><?php   echo $v['description'] ?></td>
-              <td><?php  echo $v['cost'] ?></td>
-              <td><?php   echo $v['dop'] ?></td>
-              <td><?php  echo $v['dov'] ?></td>
-              <td><?php   echo $v['username'] ?></td>
-              <td><?php   echo $v['mobile'] ?></td>
+              
+              
               <td><a href="jobDetail.php?id=<?php echo $v['id'] ?>">view</a></td>
-            
 
            
             </tr>

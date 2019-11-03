@@ -1,9 +1,10 @@
 <?php
-include("class/Job1.php");
+include("class/user.php");
 include("class/message_ok.php");
+include("lib/dbconnect.php");
 
 
-$obj = new Job1("safetrade");
+
 
 $username=isset($_POST['username'])?$_POST['username']:"";
 
@@ -24,11 +25,10 @@ $mobile=isset($_POST['mobile'])?$_POST['mobile']:"";
 
 
 
+$row = user::find1($mysqli, $username);
 
 
-$rt=$obj->get_one("user","username='$username'");
-
-if(!empty($rt))
+if(!empty($row))
 {
     msg_url("duplicate username!","register.php");;
 
@@ -40,19 +40,15 @@ if(!empty($rt))
         msg_url("Two times password must be same!","register.php");;
     }else
     {
-    $data=array
-    (
-        'username'=>$username,
-        //'pwd'=>sha1($pwd),
-        'password'=>$password,
-        'email'=>$email,
-        'mobile'=>$mobile
-
-    )
-    ;
-    $obj->insertdata("user",$data);
-
-    msg_url("You have registered successfully","login.php");
+        $row1=user::create($mysqli,$username,$password,$email,$mobile);
+        if($row1){
+            msg_url("Registered successfully","login.php");
+        }else{
+             msg_url("Registered failed","login.php");
+    
+        }
+    
+    
     }
 
 

@@ -1,14 +1,14 @@
 <?php
-include("class/Job1.php");
+include("class/Tradesmen.php");
 include("class/message_ok.php");
+include("lib/dbconnect.php");
 
 
-$obj = new Job1("safetrade");
+//get the value from form 
+$tname=isset($_POST['username'])?$_POST['username']:"";
 
-$username=isset($_POST['username'])?$_POST['username']:"";
 
-
-$id=isset($_POST['id'])?$_POST['id']:"";
+$wid=isset($_POST['id'])?$_POST['id']:"";
 
 
 
@@ -19,36 +19,23 @@ $totalcost=isset($_POST['totalcost'])?$_POST['totalcost']:"";
 
 $laborcost=isset($_POST['laborcost'])?$_POST['laborcost']:"";
 $materialcost=isset($_POST['materialcost'])?$_POST['materialcost']:"";
-$dov=isset($_POST['dov'])?$_POST['dov']:"";
+$tvaliddate=isset($_POST['dov'])?$_POST['dov']:"";
 
 
 $mobile=isset($_POST['mobile'])?$_POST['mobile']:"";
 
 
+//use create method of Tradesmen class
+$tradesmen=Tradesmen::create($mysqli, $tname,  $wid,$sex,$age,$totalcost, $laborcost,$materialcost,$tvaliddate,$mobile,$status=0);
 
 
 
 
 
-
-    $data=array
-    (
-        'tname'=>$username,
-        'wid'=>$id,
-        'sex'=>$sex,
-        'totalcost'=>$totalcost,
-        'mobile'=>$mobile,
-        'laborcost'=>$laborcost,
-        
-        'materialcost'=>$materialcost,
-        'tvaliddate'=>$dov,
-        'age'=>$age,
-
-    )
-    ;
-    $row = $obj->insertdata("tradesmen",$data);
     
-    if($row){
+   
+    
+    if($tradesmen){
         msg_url("applyed successfully","myEstimatedJob.php");
     }else{
          msg_url("applyed failed","apply.php");
