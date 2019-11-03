@@ -46,9 +46,9 @@ include("header.php");
 </div>
 <div   style="background-color:white" class="div2">
     <div class="indexD2">
-     <h2>Job hunting. Learn how to find work</h2>
+     <h2>Job hunting<br> Learn how to find work</h2>
 ​
-<p style="font-size:13px;">With FreeTrade, you can search millions of jobs online to find the next step in your career.</p>
+<p style="font-size:13px;">With FreeTrade<br>you can search millions of jobs<br> online to find the next step in your career.</p>
     </div>   
 </div>
 
